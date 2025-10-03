@@ -68,3 +68,30 @@ main {
   color: #fff;
 }
 #btnClear:hover { background-color: #991b1b; }
+
+#btnTitle {
+  background-color: #1d4ed8; /* blue */
+  border-color: #1e3a8a;
+  color: #fff;
+}
+#btnTitle:hover { background-color: #1e3a8a; }
+
+#btnCycle {
+  background-color: #9333ea; /* purple */
+  border-color: #6b21a8;
+  color: #fff;
+}
+#btnCycle:hover { background-color: #6b21a8; }
+
+#btnChangeBoth {
+  background-color: #0d9488; /* teal */
+  border-color: #115e59;
+  color: #fff;
+}
+#btnChangeBoth:hover { background-color: #115e59; }
+.row.g-2.text-center > .col {
+  display: flex;
+}
+.row.g-2.text-center > .col .btn {
+  flex: 1;
+}

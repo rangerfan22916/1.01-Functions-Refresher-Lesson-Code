@@ -109,16 +109,43 @@ document.getElementById('btnTime').addEventListener('click', timeOfDay)
 document.getElementById('btnRandom').addEventListener('click', randomBetween)
 document.getElementById('btnClear').addEventListener('click', clearOutput)
 
-/* 
-  ------------------------------------------
-  Student Challenge Section 
-  ------------------------------------------
-  Add 4 new functions here, each with its own button in index.html:
-  
-  1) Change the page title text to something new.
-  2) Cycle the output box text color (switch to a different color each time clicked).
-  3) Change BOTH the text and background color of #out.
-  
-  Write each function below, and don’t forget to connect each one 
-  to a new button in index.html using addEventListener.
-*/
+// Function 6 — changeTitle()
+// ----------------------------
+// Change the page <title> text and also the <h1> in header
+function changeTitle () {
+  const newTitle = prompt('Enter a new page title:')
+  if (!newTitle) {
+    render('<p>No title entered.</p>')
+    return
+  }
+  document.title = newTitle
+  document.querySelector('header h1').textContent = newTitle
+  render(`<p>Page title changed to: ${newTitle}</p>`)
+}
+
+// Function 7 — cycleTextColor()
+// ------------------------------
+// Cycle through a set of colors each time the button is clicked
+let colorIndex = 0
+const colors = ['#b45309', '#15803d', '#d97706', '#dc2626', '#1d4ed8'] // fall + blue
+function cycleTextColor () {
+  colorIndex = (colorIndex + 1) % colors.length
+  document.getElementById('out').style.color = colors[colorIndex]
+  render(`<p>Text color changed to ${colors[colorIndex]}</p>`)
+}
+
+// Function 8 — changeTextAndBackground()
+// ---------------------------------------
+// Change both text and background color of #out
+function changeTextAndBackground () {
+  const out = document.getElementById('out')
+  out.style.color = '#fff'
+  out.style.backgroundColor = '#4338ca' // indigo
+  out.innerHTML = '<p>Both text and background colors changed!</p>'
+}
+
+
+// Event listeners for new buttons
+document.getElementById('btnTitle').addEventListener('click', changeTitle)
+document.getElementById('btnCycle').addEventListener('click', cycleTextColor)
+document.getElementById('btnChangeBoth').addEventListener('click', changeTextAndBackground)
